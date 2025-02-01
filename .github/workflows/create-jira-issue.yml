@@ -1,0 +1,49 @@
+name: Create Branch from Issue
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  create_branch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup Git Config
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Create branch for the issue
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ISSUE_NUMBER=${{ github.event.issue.number }}
+          ISSUE_TITLE="${{ github.event.issue.title }}"
+          # 접두사 추출
+          PREFIX=$(echo "$ISSUE_TITLE" | grep -oE '^(feat|fix|docs|setting|add|refactor|chore)')
+          if [ -z "$PREFIX" ]; then PREFIX="feature"; fi
+          # 브랜치 이름 생성
+          BRANCH_NAME="${PREFIX}/#${ISSUE_NUMBER}-$(echo "$ISSUE_TITLE" | iconv -c -f utf-8 -t ascii//TRANSLIT | sed 's/[^a-zA-Z0-9-]//g')"
+          echo "Creating branch with name: $BRANCH_NAME"
+          
+          git branch
+          git status
+
+          git checkout -b "$BRANCH_NAME"
+          if [ $? -ne 0 ]; then
+            echo "Checkout to $BRANCH_NAME failed."
+            exit 1
+          else
+            echo "Checkout to $BRANCH_NAME completed."
+          fi
+
+          git push --set-upstream "https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}" "$BRANCH_NAME"
+          if [ $? -ne 0 ]; then
+            echo "Failed to push branch $BRANCH_NAME"
+            exit 1
+          else
+            echo "Pushed $BRANCH_NAME successfully."
