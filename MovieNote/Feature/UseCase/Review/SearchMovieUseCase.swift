@@ -1,5 +1,5 @@
 //
-//  CheckReviewedMovieUseCase.swift
+//  SearchMovieUseCase.swift
 //  MovieNote
 //
 //  Created by YOUJIM on 2/3/25.
@@ -9,7 +9,7 @@
 import Combine
 import Foundation
 
-class CheckReviewedMovieUseCase {
+class SearchMovieUseCase {
     func execute(movieName: String) -> AnyPublisher<Bool, Never> {
         if let data = UserDefaults.standard.object(forKey: "ReviewList") as? Data {
             let decoder = JSONDecoder()
