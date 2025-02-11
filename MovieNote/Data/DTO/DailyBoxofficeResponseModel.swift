@@ -8,11 +8,13 @@
 
 import Foundation
 
-struct DailyBoxofficeResponseModel {
-    let boxOfficeResult: BoxOfficeResult
+extension DTO.Response {
+    struct DailyBoxoffice: Codable {
+        let boxOfficeResult: BoxOfficeResult
+    }
 }
 
-struct BoxOfficeResult {
+struct BoxOfficeResult: Codable {
     let boxofficeType, showRange: String
     let dailyBoxOfficeList: [BoxOfficeList]
 }

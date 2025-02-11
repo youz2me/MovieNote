@@ -8,9 +8,10 @@
 
 import Foundation
 
-
-struct WeeklyBoxofficeResponseModel: Codable {
-    let boxOfficeResult: boxOfficeResult
+extension DTO.Response {
+    struct WeeklyBoxoffice: Codable {
+        let boxOfficeResult: boxOfficeResult
+    }
 }
 
 struct boxOfficeResult: Codable {

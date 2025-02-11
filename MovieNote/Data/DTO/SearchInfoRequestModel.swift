@@ -8,7 +8,9 @@
 
 import Foundation
 
-struct SearchInfoRequestModel: Codable {
-    let key: String
-    let movieCd: String
+extension DTO.Request {
+    struct SearchInfo: Codable {
+        let key: String
+        let movieCd: String
+    }
 }

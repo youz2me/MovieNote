@@ -8,16 +8,18 @@
 
 import Foundation
 
-struct SearchListRequestModel: Codable {
-    let key: String
-    let curPage: String?
-    let itemPerPage: String?
-    let movieNm: String?
-    let directorNm: String?
-    let openStartDt: String?
-    let openEndDt: String?
-    let prdtStartYear: String?
-    let prdtEndYear: String?
-    let repNationCd: String?
-    let movieTypeCd: String?
+extension DTO.Request {
+    struct SearchList: Codable {
+        let key: String
+        let curPage: String?
+        let itemPerPage: String?
+        let movieNm: String?
+        let directorNm: String?
+        let openStartDt: String?
+        let openEndDt: String?
+        let prdtStartYear: String?
+        let prdtEndYear: String?
+        let repNationCd: String?
+        let movieTypeCd: String?
+    }
 }

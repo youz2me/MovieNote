@@ -15,7 +15,7 @@ class CheckMovieSearchUseCase {
         self.repository = repository
     }
     
-    func execute(keyword: String) -> AnyPublisher<Movie, Error> {
+    func execute(keyword: String) -> AnyPublisher<[String], Error> {
         return repository.fetchSearchedMovie(keyword: keyword)
             .eraseToAnyPublisher()
     }

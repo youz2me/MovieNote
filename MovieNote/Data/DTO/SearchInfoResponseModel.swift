@@ -8,16 +8,18 @@
 
 import Foundation
 
-struct SearchInfoResponseModel {
-    let movieInfoResult: MovieInfoResult
+extension DTO.Response {
+    struct SearchInfo: Codable {
+        let movieInfoResult: MovieInfoResult
+    }
 }
 
-struct MovieInfoResult {
+struct MovieInfoResult: Codable  {
     let movieInfo: MovieInfo
     let source: String
 }
 
-struct MovieInfo {
+struct MovieInfo: Codable  {
     let movieCd, movieNm, movieNmEn, movieNmOg: String
     let showTm, prdtYear, openDt, prdtStatNm: String
     let typeNm: String
@@ -31,34 +33,34 @@ struct MovieInfo {
     let staffs: [Staff]
 }
 
-struct Actor {
+struct Actor: Codable  {
     let peopleNm, peopleNmEn, cast, castEn: String
 }
 
-struct Audit {
+struct Audit: Codable  {
     let auditNo, watchGradeNm: String
 }
 
-struct SearchInfoCompany {
+struct SearchInfoCompany: Codable  {
     let companyCD, companyNm, companyNmEn, companyPartNm: String
 }
 
-struct SearchInfoDirector {
+struct SearchInfoDirector: Codable  {
     let peopleNm, peopleNmEn: String
 }
 
-struct Genre {
+struct Genre: Codable  {
     let genreNm: String
 }
 
-struct Nation {
+struct Nation: Codable  {
     let nationNm: String
 }
 
-struct ShowType {
+struct ShowType: Codable  {
     let showTypeGroupNm, showTypeNm: String
 }
 
-struct Staff {
+struct Staff: Codable  {
     let peopleNm, peopleNmEn, staffRoleNm: String
 }

@@ -8,17 +8,19 @@
 
 import Foundation
 
-struct SearchListResponseModel {
-    let movieListResult: MovieListResult
+extension DTO.Response {
+    struct SearchList: Codable {
+        let movieListResult: MovieListResult
+    }
 }
 
-struct MovieListResult {
+struct MovieListResult: Codable {
     let totCnt: Int
     let source: String
     let movieList: [MovieList]
 }
 
-struct MovieList {
+struct MovieList: Codable {
     let movieCd, movieNm, movieNmEn, prdtYear: String
     let openDt: String
     let typeNm: String
@@ -31,10 +33,10 @@ struct MovieList {
     let companys: [SearchListCompany]
 }
 
-struct SearchListCompany {
+struct SearchListCompany: Codable {
     let companyCD, companyNm: String
 }
 
-struct SearchListDirector {
+struct SearchListDirector: Codable {
     let peopleNm: String
 }

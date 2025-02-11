@@ -11,10 +11,10 @@ import Foundation
 import Moya
 
 enum MovieTargetType {
-    case fetchDailyBoxOffice
-    case fetchWeeklyBoxOffice
-    case fetchSearchedMovie
-    case fetchDetailInfo
+    case fetchDailyBoxOffice(request: DTO.Request.DailyBoxoffice)
+    case fetchWeeklyBoxOffice(request: DTO.Request.WeeklyBoxoffice)
+    case fetchSearchedMovie(request: DTO.Request.SearchList)
+    case fetchDetailInfo(request: DTO.Request.SearchInfo)
 }
 
 extension MovieTargetType: TargetType {
@@ -48,13 +48,13 @@ extension MovieTargetType: TargetType {
     var task: Moya.Task {
         switch self {
         case .fetchDailyBoxOffice(let request):
-            <#code#>
+            return .requestJSONEncodable(request)
         case .fetchWeeklyBoxOffice(let request):
-            <#code#>
+            return .requestJSONEncodable(request)
         case .fetchSearchedMovie(let request):
-            <#code#>
+            return .requestJSONEncodable(request)
         case .fetchDetailInfo(let request):
-            <#code#>
+            return .requestJSONEncodable(request)
         }
     }
     
