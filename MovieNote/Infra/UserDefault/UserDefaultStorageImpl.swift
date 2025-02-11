@@ -8,7 +8,7 @@
 
 import Foundation
 
-class UserDefaultStorageImpl: UserDefaultStorage {
+class UserDefaultStorageService: UserDefaultStorage {
     private let userDefaults: UserDefaults
     
     init(userDefaults: UserDefaults = .standard) {
