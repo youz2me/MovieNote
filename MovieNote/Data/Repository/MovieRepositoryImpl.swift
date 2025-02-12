@@ -7,20 +7,23 @@
 
 
 import Foundation
-
 import Combine
 import CombineMoya
+
 import Moya
 
 class MovieService {
     let provider = MoyaProvider<MovieTargetType>()
+    let dateFormatter: DateFormatter
+
+    init() {
+        self.dateFormatter = DateFormatter()
+        self.dateFormatter.dateFormat = "yyyyMMdd"
+    }
 }
 
 extension MovieService: MovieRepository {
     func fetchDailyBoxOffice(date: Date) -> AnyPublisher<[Movie], any Error> {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyyMMdd"
-        
         return provider.requestPublisher(
             .fetchDailyBoxOffice(
                 request: DTO.Request.DailyBoxoffice(
@@ -34,7 +37,7 @@ extension MovieService: MovieRepository {
             )
         )
         .map(\.data)
-        .decode(type: DTO.Response.DailyBoxoffice.self, decoder: JSONDecoder())
+        .decode(type: DTO.Response.DailyBoxoffice.self, decoder: JSONCoder.shared.decoder)
         .tryMap {
             return $0.boxOfficeResult.dailyBoxOfficeList.map {
                 Movie(
@@ -47,9 +50,6 @@ extension MovieService: MovieRepository {
     }
     
     func fetchWeeklyBoxOffice(date: Date) -> AnyPublisher<[Movie], any Error> {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyyMMdd"
-        
         return provider.requestPublisher(
             .fetchWeeklyBoxOffice(
                 request: DTO.Request.WeeklyBoxoffice(
@@ -64,7 +64,7 @@ extension MovieService: MovieRepository {
             )
         )
         .map(\.data)
-        .decode(type: DTO.Response.WeeklyBoxoffice.self, decoder: JSONDecoder())
+        .decode(type: DTO.Response.WeeklyBoxoffice.self, decoder: JSONCoder.shared.decoder)
         .tryMap {
             return $0.boxOfficeResult.weeklyBoxOfficeList.map {
                 Movie(
@@ -95,7 +95,7 @@ extension MovieService: MovieRepository {
             )
         )
         .map(\.data)
-        .decode(type: DTO.Response.SearchList.self, decoder: JSONDecoder())
+        .decode(type: DTO.Response.SearchList.self, decoder: JSONCoder.shared.decoder)
         .tryMap {
             return $0.movieListResult.movieList.map {
                 $0.movieNm
@@ -114,7 +114,7 @@ extension MovieService: MovieRepository {
             )
         )
         .map(\.data)
-        .decode(type: DTO.Response.SearchInfo.self, decoder: JSONDecoder())
+        .decode(type: DTO.Response.SearchInfo.self, decoder: JSONCoder.shared.decoder)
         .tryMap {
             return MovieDetail(
                 movieInfo: Movie(

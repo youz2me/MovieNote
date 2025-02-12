@@ -42,7 +42,9 @@
 		DD3BFF7A2D5A4989001EC754 /* Bundle+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3BFF512D5A4989001EC754 /* Bundle+.swift */; };
 		DD3BFF7B2D5A4989001EC754 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3BFF592D5A4989001EC754 /* ViewController.swift */; };
 		DD3BFF7E2D5A4A02001EC754 /* DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3BFF7D2D5A49FE001EC754 /* DTO.swift */; };
+		DD5261B22D5CEAF300CC52A6 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5261B12D5CEAEF00CC52A6 /* String+.swift */; };
 		DDF16F4C2D5A73A40067FEC8 /* ReviewRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF16F4B2D5A73980067FEC8 /* ReviewRepositoryImpl.swift */; };
+		DDF3A69E2D5D2357008876C7 /* JSONCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF3A69D2D5D2352008876C7 /* JSONCoder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,7 +82,9 @@
 		DD3BFF572D5A4989001EC754 /* PrivacyInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PrivacyInfo.plist; sourceTree = "<group>"; };
 		DD3BFF592D5A4989001EC754 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DD3BFF7D2D5A49FE001EC754 /* DTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTO.swift; sourceTree = "<group>"; };
+		DD5261B12D5CEAEF00CC52A6 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		DDF16F4B2D5A73980067FEC8 /* ReviewRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewRepositoryImpl.swift; sourceTree = "<group>"; };
+		DDF3A69D2D5D2352008876C7 /* JSONCoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONCoder.swift; sourceTree = "<group>"; };
 		DDF5AEC42D4CE89600253DB3 /* MovieNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -220,6 +224,7 @@
 		DD3BFF502D5A4989001EC754 /* Infra */ = {
 			isa = PBXGroup;
 			children = (
+				DDF3A69C2D5D2344008876C7 /* Utils */,
 				DD3BFF7C2D5A49D2001EC754 /* Network */,
 				DD3BFF4F2D5A4989001EC754 /* UserDefault */,
 			);
@@ -229,6 +234,7 @@
 		DD3BFF522D5A4989001EC754 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				DD5261B12D5CEAEF00CC52A6 /* String+.swift */,
 				DD3BFF512D5A4989001EC754 /* Bundle+.swift */,
 			);
 			path = Extension;
@@ -273,6 +279,14 @@
 				DD3BFF4E2D5A4989001EC754 /* TargetType */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		DDF3A69C2D5D2344008876C7 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DDF3A69D2D5D2352008876C7 /* JSONCoder.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		DDF5AEBB2D4CE89600253DB3 = {
@@ -380,6 +394,7 @@
 				DD3BFF662D5A4989001EC754 /* SearchListRequestModel.swift in Sources */,
 				DD3BFF672D5A4989001EC754 /* SearchListResponseModel.swift in Sources */,
 				DD3BFF7E2D5A4A02001EC754 /* DTO.swift in Sources */,
+				DD5261B22D5CEAF300CC52A6 /* String+.swift in Sources */,
 				DD3BFF682D5A4989001EC754 /* WeeklyBoxofficeRequestModel.swift in Sources */,
 				DD3BFF692D5A4989001EC754 /* WeeklyBoxofficeResponseModel.swift in Sources */,
 				DD3BFF6A2D5A4989001EC754 /* MovieRepositoryImpl.swift in Sources */,
@@ -397,6 +412,7 @@
 				DD3BFF742D5A4989001EC754 /* CheckReviewUseCase.swift in Sources */,
 				DD3BFF752D5A4989001EC754 /* DeleteReviewUseCase.swift in Sources */,
 				DD3BFF762D5A4989001EC754 /* RecordReviewUseCase.swift in Sources */,
+				DDF3A69E2D5D2357008876C7 /* JSONCoder.swift in Sources */,
 				DD3BFF772D5A4989001EC754 /* SearchMovieUseCase.swift in Sources */,
 				DD3BFF792D5A4989001EC754 /* MovieTargetType.swift in Sources */,
 				DD3BFF7A2D5A4989001EC754 /* Bundle+.swift in Sources */,

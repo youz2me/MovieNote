@@ -17,7 +17,7 @@ class ReviewService: ReviewRepository {
     
     func fetchReview() -> AnyPublisher<[String : Review], any Error> {
         return Future { promise in
-            if let reviewList: [String: Review] = self.storage.getValue(forKey: "ReviewList") {
+            if let reviewList: [String: Review] = self.storage.getValue(forKey: String.reviewList) {
                 promise(.success(reviewList))
             } else {
                 promise(.success([:]))
@@ -28,9 +28,9 @@ class ReviewService: ReviewRepository {
     
     func recordReview(key: String, review: Review) -> AnyPublisher<Bool, any Error> {
         return Future { promise in
-            if var reviewList: [String: Review] = self.storage.getValue(forKey: "ReviewList") {
+            if var reviewList: [String: Review] = self.storage.getValue(forKey: String.reviewList) {
                 reviewList.updateValue(review, forKey: key)
-                self.storage.setValue(reviewList, forKey: "ReviewList")
+                self.storage.setValue(reviewList, forKey: String.reviewList)
                 
                 promise(.success(true))
             }
@@ -40,9 +40,9 @@ class ReviewService: ReviewRepository {
     
     func deleteReview(key: String) -> AnyPublisher<Bool, any Error> {
         return Future { promise in
-            if var reviewList: [String: Review] = self.storage.getValue(forKey: "ReviewList") {
+            if var reviewList: [String: Review] = self.storage.getValue(forKey: String.reviewList) {
                 reviewList.removeValue(forKey: key)
-                self.storage.setValue(reviewList, forKey: "ReviewList")
+                self.storage.setValue(reviewList, forKey: String.reviewList)
                 
                 promise(.success(true))
             }

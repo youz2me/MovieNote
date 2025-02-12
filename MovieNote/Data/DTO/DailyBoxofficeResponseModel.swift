@@ -10,11 +10,11 @@ import Foundation
 
 extension DTO.Response {
     struct DailyBoxoffice: Codable {
-        let boxOfficeResult: BoxOfficeResult
+        let boxOfficeResult: DailyBoxOfficeResult
     }
-}
-
-struct BoxOfficeResult: Codable {
-    let boxofficeType, showRange: String
-    let dailyBoxOfficeList: [BoxOfficeList]
+    
+    struct DailyBoxOfficeResult: Codable {
+        let boxofficeType, showRange: String
+        let dailyBoxOfficeList: [BoxOfficeList]
+    }
 }
