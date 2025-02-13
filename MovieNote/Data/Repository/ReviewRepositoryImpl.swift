@@ -50,3 +50,9 @@ class ReviewService: ReviewRepository {
         .eraseToAnyPublisher()
     }
 }
+
+private extension ReviewService {
+    enum Constant {
+        static let reviewList = "ReviewList"
+    }
+}

@@ -42,7 +42,6 @@
 		DD3BFF7A2D5A4989001EC754 /* Bundle+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3BFF512D5A4989001EC754 /* Bundle+.swift */; };
 		DD3BFF7B2D5A4989001EC754 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3BFF592D5A4989001EC754 /* ViewController.swift */; };
 		DD3BFF7E2D5A4A02001EC754 /* DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3BFF7D2D5A49FE001EC754 /* DTO.swift */; };
-		DD4BFCD82D5D95E7003A8045 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4BFCD72D5D95E4003A8045 /* Constant.swift */; };
 		DDF16F4C2D5A73A40067FEC8 /* ReviewRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF16F4B2D5A73980067FEC8 /* ReviewRepositoryImpl.swift */; };
 		DDF3A69E2D5D2357008876C7 /* JSONCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF3A69D2D5D2352008876C7 /* JSONCoder.swift */; };
 /* End PBXBuildFile section */
@@ -82,7 +81,6 @@
 		DD3BFF572D5A4989001EC754 /* PrivacyInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PrivacyInfo.plist; sourceTree = "<group>"; };
 		DD3BFF592D5A4989001EC754 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DD3BFF7D2D5A49FE001EC754 /* DTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTO.swift; sourceTree = "<group>"; };
-		DD4BFCD72D5D95E4003A8045 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		DDF16F4B2D5A73980067FEC8 /* ReviewRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewRepositoryImpl.swift; sourceTree = "<group>"; };
 		DDF3A69D2D5D2352008876C7 /* JSONCoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONCoder.swift; sourceTree = "<group>"; };
 		DDF5AEC42D4CE89600253DB3 /* MovieNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -299,7 +297,6 @@
 		DDF3A69C2D5D2344008876C7 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				DD4BFCD72D5D95E4003A8045 /* Constant.swift */,
 				DDF3A69D2D5D2352008876C7 /* JSONCoder.swift */,
 			);
 			path = Utils;
@@ -401,7 +398,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD2F70842D5B6960005D578D /* UserDefaultStorageImpl.swift in Sources */,
-				DD4BFCD82D5D95E7003A8045 /* Constant.swift in Sources */,
 				DD3BFF602D5A4989001EC754 /* AppDelegate.swift in Sources */,
 				DD3BFF612D5A4989001EC754 /* SceneDelegate.swift in Sources */,
 				DD3BFF622D5A4989001EC754 /* DailyBoxoffice.swift in Sources */,
